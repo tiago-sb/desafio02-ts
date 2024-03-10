@@ -1,3 +1,3 @@
 export interface IButton {
-    login: () => void;
+    onClick: () => void
 }

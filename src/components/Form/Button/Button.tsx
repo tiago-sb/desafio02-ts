@@ -1,13 +1,14 @@
-import { login } from "../../../services/login";
 import {
     ChakraProvider,
     Button
 } from '@chakra-ui/react';
+import { IButton } from "./types";
 
-export const ButtonForm = () => {
+export const ButtonForm = ({onClick}: IButton) => {
+    
     return(
         <ChakraProvider>
-            <Button onClick={login} colorScheme='teal' size='sm' width='100%' marginTop='5px' backgroundColor='#0000ff'>
+            <Button onClick={onClick} colorScheme='teal' size='sm' width='100%' marginTop='5px' backgroundColor='#0000ff'>
                 Enviar
             </Button>
         </ChakraProvider>
