@@ -3,7 +3,8 @@ import {
   Box,
   Center,
   Input,
-  Text
+  Text,
+  Spinner
 } from '@chakra-ui/react';
 import { ButtonForm } from '../Button/Button';
 import { useEffect, useState } from 'react';
@@ -30,7 +31,7 @@ export const Form = () => {
           <Center>
             <Text fontSize='18pt' marginBottom='1rem' color='#0000ff'>
               {userData === null || userData === undefined ? ( 
-                <Text>Loading...</Text> 
+                <Spinner />
               ) : ( 
                 <Text>Faça o Login</Text> 
               )}

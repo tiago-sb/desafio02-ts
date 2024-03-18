@@ -1,21 +1,22 @@
-import { useState } from 'react';
-
-import { 
-  ChakraProvider,
-  Box,
-} from '@chakra-ui/react';
-
+import { ChakraProvider } from '@chakra-ui/react';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home/Home';
+import { Conta } from './pages/Conta/Conta';
 import { Header } from './components/Header/Header';
-import { Form } from './components/Form/Form/Form';
+import { ContaInfo } from './pages/ContaInfo/ContaInfo';
 
 export const App = () => {
-  
   return (
-    <ChakraProvider >
-      <Box height='100vh' backgroundColor='#000aa0'>
+    <BrowserRouter>
+      <ChakraProvider >
         <Header />
-        <Form />
-      </Box>
-    </ChakraProvider>
+        <Routes>
+          <Route path='/' element={<Home/>} />  
+          <Route path='/conta/:id' element={<Conta/>} />
+          <Route path='/conta-info' element={<ContaInfo/>}/>
+        </Routes>
+      </ChakraProvider>
+    </BrowserRouter>
+    
   );
 }
