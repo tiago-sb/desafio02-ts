@@ -1,5 +1,14 @@
 import { login } from "./login"
 import { api } from "../api"
+import { useContext } from "react"
+
+jest.mock('react', () => ({
+    ...jest.requireActual('react'),
+    useContext: () => ({
+        logado: true,
+        setLogaado: jest.fn()
+    })
+}))
 
 describe('login', () => {
 
