@@ -8,12 +8,14 @@ import {
 import { useContext } from 'react';
 import { AppContext } from '../AppContext/AppContext';
 import { useNavigate } from 'react-router-dom';
+import { changeLocalStorage } from '../../services/storage';
 
 export const Header  = () => {
   const { logado, setLogado } = useContext(AppContext)
   const navigate = useNavigate()
 
   const sairPagina = () => {
+    changeLocalStorage({ login: false})
     setLogado(false)
     navigate('/')
   }
@@ -34,6 +36,5 @@ export const Header  = () => {
         )}
       </Flex>
     </ChakraProvider>
-    
   );
 }

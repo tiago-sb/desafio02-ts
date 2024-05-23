@@ -7,6 +7,7 @@ import { api } from '../../../api';
 import { IData } from './types';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../AppContext/AppContext';
+import { changeLocalStorage } from '../../../services/storage';
 
 export const Form = () => {
   const navigate = useNavigate()
@@ -24,7 +25,8 @@ export const Form = () => {
     }
 
     setLogado(true)
-    navigate(`/conta/1`) // ${email.id}
+    changeLocalStorage({login: true})
+    navigate(`/conta/1`)
   }
 
   useEffect(() => {
